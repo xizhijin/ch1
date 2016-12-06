@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="role" type="com.hpe.mybatis.ch1.po.Role" />
+	</typeAliases>
+
+	<!-- 对事务的管理和连接池的配置 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC">
+				<property name="autoCommit" value="false" />
+			</transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/mybatis" />
+				<property name="username" value="root" />
+				<property name="password" value="1231527" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="com\hpe\mybatis\ch1\mapper\roleMapper.xml" />
+	</mappers>
+	
+	
+</configuration>
