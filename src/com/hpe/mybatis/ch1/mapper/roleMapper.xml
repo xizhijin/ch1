@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hpe.mybatis.ch1.mapper.RoleMapper">
+ 	
  	<!-- 没有使用resultMap，因为列名和属性名一致，且使用系统默认的类型转换typeHandler，自动完成映射规则 -->
  	<select id="getRole" parameterType="long" resultType="role">
  		select id, rolename, note from t_role where id = #{id}
@@ -13,4 +14,5 @@
  	<select id="deleteRole" parameterType="long" >
  		delete from t_role where id = #{id}
  	</select>
+ 	
 </mapper>
